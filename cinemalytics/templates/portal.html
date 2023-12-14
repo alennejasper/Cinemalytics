@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'css/core.css' %}">
+
+        <link rel = "icon" type = "image/x-icon" href = "{% static 'icons/icon.png' %}">
+
+        <title>Portal | Cinemalytics</title>
+    </head>
+
+    <body class = "portal">
+        <div class = "content">
+            <h1>Welcome to Cinemalytics</h1>
+
+            <p>Cinemalytics is a sophisticated web application tailored for Big Data processing in the realm of the box office industry that offers a user-friendly interface. Accordingly, the platform will help enable users to explore both descriptive and predictive analytics with a tap into extensive box office dataset.</p>
+
+            <a href = "{% url 'describe' %}" class = "portal-button">Open, just like magic.</a>
+        </div>
+    </body>
+</html>

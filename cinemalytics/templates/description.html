@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang = "en">
+    <head>
+        <meta charCheck = "UTF-8">
+        
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'css/core.css' %}">
+
+        <link rel = "icon" type = "image/x-icon" href = "{% static 'icons/icon.png' %}">
+        
+        <link href = "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel = "stylesheet">
+
+        <title>Description | Cinemalytics</title>
+    </head>
+
+    <body class = "description">
+        <nav>
+            <a href = "{% url 'enter' %}">Cinemalytics</a>
+
+            <a href = "{% url 'describe' %}">Describe</a>
+
+            <a href = "{% url 'predict' %}">Predict</a>
+        </nav>
+
+        <div class = "content">
+            <form method = "POST" id = "form" onsubmit = "return validateForm()" action = "{% url 'describe' %}">
+                {% csrf_token %}
+
+                <div class = "attributes">
+                    <h1>Attributes</h1>
+
+                    <hr>
+
+                    <div class = "grid">
+                        <div class = "input-field">
+                            <label for = "numeric-attributes">Numeric Attributes</label>
+
+                            <input type = "text" placeholder = "Numbers do not lie." readonly>
+                            
+                            <i class = "bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('numeric-attributes')"></i>
+                            
+                            <div id = "numeric-attributes" class = "dropdown">
+                                <label>Budget<input type = "checkbox" name = "numeric_attributes" value = "budget"></label>
+
+                                <label>Revenue<input type = "checkbox" name = "numeric_attributes" value = "revenue"></label>
+
+                                <label>Popularity<input type = "checkbox" name = "numeric_attributes" value = "popularity"></label>
+
+                                <label>Vote Average<input type = "checkbox" name = "numeric_attributes" value = "vote_average"></label>
+
+                                <label>Vote Count<input type = "checkbox" name = "numeric_attributes" value = "vote_count"></label>
+
+                                <label>Runtime<input type = "checkbox" name = "numeric_attributes" value = "runtime"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "nonnumeric-attributes">Nonnumeric Attributes</label>
+                            
+                            <input type = "text" placeholder = "Reading between the lines." readonly>
+                            
+                            <i class = "bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('nonnumeric-attributes')"></i>
+
+                            <div id = "nonnumeric-attributes" class = "dropdown">
+                                <label>Genres<input type = "checkbox" name = "nonnumeric_attributes" value = "genres"></label>
+
+                                <label>Adult<input type = "checkbox" name = "nonnumeric_attributes" value = "adult"></label>
+
+                                <label>Release Date<input type = "checkbox" name = "nonnumeric_attributes" value = "release_date"></label>
+
+                                <label>Poster Path<input type = "checkbox" name = "nonnumeric_attributes" value = "poster_path"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "metrics">
+                    <h1>Metrics</h1>
+
+                    <hr>
+
+                    <div class = "grid">
+                        <div class = "input-field">
+                            <label for = "sample-size">Sample Size</label>
+
+                            <input type = "text" placeholder = "The more, the merrier." readonly>
+                            
+                            <i class="bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('sample-size')"></i>
+
+                            <div id = "sample-size" class = "dropdown">
+                                <label>N<input type = "checkbox" name = "value_present" value = "true"></label>
+
+                                <label>Missing<input type = "checkbox" name = "value_missing" value = "true"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "central-tendency">Central Tendency</label>
+                            
+                            <input type = "text" placeholder = "Stay in the middle." readonly>
+                            
+                            <i class = "bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('central-tendency')"></i>
+
+                            <div id = "central-tendency" class = "dropdown">
+                                <label>Mean<input type = "checkbox" name = "mean" value = "true"></label>
+
+                                <label>Median<input type = "checkbox" name = "median" value = "true"></label>
+
+                                <label>Mode<input type = "checkbox" name = "mode" value = "true"></label>
+
+                                <label>Sum<input type = "checkbox" name = "sum" value = "true"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "dispersion">Dispersion</label>
+
+                            <input type = "text" placeholder = "Spread like wildfire." readonly>
+                            
+                            <i class="bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('dispersion')"></i>
+
+                            <div id = "dispersion" class = "dropdown">
+                                <label>Standard Deviation<input type = "checkbox" name = "standard_deviation" value = "true"></label>
+
+                                <label>Variance<input type = "checkbox" name = "variance" value = "true"></label>
+
+                                <label>Maximum<input type = "checkbox" name = "maximum" value = "true"></label>
+
+                                <label>Minimum<input type = "checkbox" name = "minimum" value = "true"></label>
+
+                                <label>Standard Error of the Mean<input type = "checkbox" name = "standard_error" value = "true"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "distribution">Distribution</label>
+                            
+                            <input type = "text" placeholder = "In every nook and cranny." readonly>
+                            
+                            <i class = "bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('distribution')"></i>
+
+                            <div id = "distribution" class = "dropdown">
+                                <label>Skewness<input type = "checkbox" name = "skewness" value = "true"></label>
+
+                                <label>Kurtosis<input type = "checkbox" name = "tailedness" value = "true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "graphs">
+                    <h1>Graphs</h1>
+
+                    <hr>
+
+                    <div class = "grid">
+                        <div class = "input-field">
+                            <label for = "variability">Variability</label>
+
+                            <input type = "text" placeholder = "Variety is the spice of life." readonly>
+                            
+                            <i class="bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('variability')"></i>
+
+                            <div id = "variability" class = "dropdown">
+                                <label>Normal Distribution<input type = "checkbox" name = "probability_distribution" value = "true"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "correlation">Correlation</label>
+                            
+                            <input type = "text" placeholder = "Soulmates find each other." readonly>
+                            
+                            <i class = "bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('correlation')"></i>
+
+                            <div id = "correlation" class = "dropdown">
+                                <label>Correlation Matrix<input type = "checkbox" name = "correlation_matrix" value = "true"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "trend">Trend</label>
+
+                            <input type = "text" placeholder = "Behind the times." readonly>
+                            
+                            <i class="bx bx-down-arrow-circle icon-field" onclick = "toggleDropdown('trend')"></i>
+
+                            <div id = "trend" class = "dropdown">
+                                <label>Start Date<input type = "date" name = "start_date" id = "start-date"></label>
+
+                                <label>End Date<input type = "date" name = "end_date" id = "end-date"></label>
+
+                                <label>Time Series Plot<input type = "checkbox" name = "line_chart" value = "true" id = "line-chart" onchange = "toggleRequired()"></label>
+                            </div>
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "submit" style = "font-family: 'Montserrat';">Submit</label>
+
+                            <input type = "submit" value = "Enter, submit, succeed.">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function toggleDropdown(dropdownId){
+                var dropdown = document.getElementById(dropdownId);
+
+                if (dropdown.style.display === "block"){
+                    dropdown.style.display = "none";
+
+                } else{
+                    dropdown.style.display = "block";
+                }
+            }
+        </script>
+
+        <script>
+            function toggleRequired(){
+                var startDate = document.getElementById("start-date");
+
+                var endDate = document.getElementById("end-date");
+
+                var checkbox = document.getElementById("line-chart");
+
+                startDate.required = checkbox.checked;
+
+                endDate.required = checkbox.checked;
+            }
+        </script>
+
+        <script src = "https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+        <script>
+            function validateForm(){
+                var metricsCheckboxes = document.querySelectorAll(".metrics input[type='checkbox']:checked");
+                
+                var attributesCheckboxes = document.querySelectorAll(".attributes input[type='checkbox']:checked");
+
+                var graphsCheckboxes = document.querySelector(".graphs input[type='checkbox']:checked");
+
+                var lineChartCheckbox = document.querySelector(".graphs input[name='line_chart']:checked");
+
+                if ((metricsCheckboxes.length === 0 && attributesCheckboxes.length === 0 && !graphsCheckboxes) || (metricsCheckboxes && attributesCheckboxes.length === 0 && graphsCheckboxes) || (metricsCheckboxes && attributesCheckboxes.length === 0 && !graphsCheckboxes) || (metricsCheckboxes.length === 0 && attributesCheckboxes && !graphsCheckboxes) || (metricsCheckboxes.length === 0 && attributesCheckboxes && lineChartCheckbox) || (attributesCheckboxes.length === 0 && metricsCheckboxes.length === 0 && graphsCheckboxes)){
+                    Swal.fire({
+                        icon: "error", 
+                        title: "Oops...", 
+                        text: "Kindly tick at least one checkbox field in the Metrics and the Attributes corner to proceed.",
+                        background: "#FFEBA7",
+                        iconColor: "#462113",
+                        confirmButtonText: "Submit once, scrutinize twice.",
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        customClass: {
+                            confirmButton: "button-custom", 
+                            title: "title-custom", 
+                        },
+
+                    }).then((result) =>{
+                        if (result.isConfirmed){
+                            window.scrollTo(0, 0);
+
+                            setTimeout(function (){
+                                location.reload(true);
+                            }, 100);
+                        }
+                    });
+
+                    return false; 
+
+                } else if (attributesCheckboxes.length >= 2 && graphsCheckboxes || metricsCheckboxes.length === 0){
+                    return true;
+
+                } else {
+                    return true;
+                }
+            }
+        </script>
+
+        <style>
+            .swal2-popup .swal2-styled:focus{
+                box-shadow: none !important;
+            }
+
+            div:where(.swal2-container) .swal2-html-container{
+                padding: 20px 3em 0em 3em !important;
+                margin: 0px !important;
+                font-family: "Montserrat" !important;
+                font-weight: normal !important;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+                color: #462113 !important;
+            }
+
+            div:where(.swal2-container) h2:where(.swal2-title){
+                padding: 20px 3em 0em 3em !important;
+            }
+
+            div:where(.swal2-icon){
+                margin: 2.5em auto 0em auto !important;
+            }
+
+            div:where(.swal2-container) div:where(.swal2-popup){
+                padding: 0em 0em 2.5em !important;
+            }
+
+            div:where(.swal2-container) div:where(.swal2-actions){
+                margin: 20px auto 0 !important;
+            }
+
+            .swal2-popup{
+                border-radius: 5px;
+            }
+
+            .button-custom{
+                cursor: pointer;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+                font-family: "Merriweather";
+                font-weight: normal;
+                border: 5px solid #462113 !important;
+                border-radius: 5px !important;
+                background-color: #6E6A6A !important;
+                color: #FFEBA7 !important;
+                outline: none !important;
+            }
+
+            .button-custom:hover{
+                background-color: #4A4344 !important;
+            }
+
+            .title-custom{
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-family: "Playfair Display";
+                font-weight: bold;
+                color: #462113;
+                pointer-events: none;
+            }
+        </style>
+    </body>
+</html>

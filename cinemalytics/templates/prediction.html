@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'css/core.css' %}">
+
+        <link rel = "icon" type = "image/x-icon" href = "{% static 'icons/icon.png' %}">
+        
+        <link href = "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel = "stylesheet">
+
+        <title>Prediction | Cinemalytics</title>
+    </head>
+
+    <body class = "prediction">
+        <nav>
+            <a href = "{% url 'enter' %}">Cinemalytics</a>
+
+            <a href = "{% url 'describe' %}">Describe</a>
+
+            <a href = "{% url 'predict' %}">Predict</a>
+        </nav>
+
+        <div class = "content">
+            <form method = "POST" id = "form" onsubmit = "return validateForm()" action = "{% url 'predict' %}">
+                {% csrf_token %}
+
+                <div class = "attributes">
+                    <h1>Inputs</h1>
+
+                    <hr>
+
+                    <div class = "grid">
+                        <div class = "input-field">
+                            <label for = "budget">Budget</label>
+
+                            <input type = "text" name = "budget" placeholder = "How much in U.S. dollars?">
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "runtime">Runtime</label>
+
+                            <input type = "text" name = "runtime" placeholder = "How long in minutes?">
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "popularity">Popularity</label>
+
+                            <input type = "text" name = "popularity" placeholder = "How big is the TMDB score?">
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "vote-average">Vote Average</label>
+
+                            <input type = "text" name = "vote_average" placeholder = "How high are the ratings?">
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "vote-count">Vote Count</label>
+
+                            <input type = "text" name = "vote_count" placeholder = "How many slipped a review?">
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "attributes">
+                    <h1>Options</h1>
+
+                    <hr>
+
+                    <div class = "grid">
+                        <div class = "checkbox-field">
+                            <label for = "adult">Adult</label>
+
+                            <input type = "text" placeholder = "Is the film mature?" readonly>
+
+                            <input type = "checkbox" name = "adult" value = "true">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "action">Action</label>
+
+                            <input type = "text" placeholder = "Is the film explosive?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Action">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "adventure">Adventure</label>
+
+                            <input type = "text" placeholder = "Is the film heroic?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Adventure">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "animation">Animation</label>
+
+                            <input type = "text" placeholder = "Is the film colorful?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Animation">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "comedy">Comedy</label>
+
+                            <input type = "text" placeholder = "Is the film hilarious?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Comedy">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "crime">Crime</label>
+
+                            <input type = "text" placeholder = "Is the film dark?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Crime">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "documentary">Documentary</label>
+
+                            <input type = "text" placeholder = "Is the film informative?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Documentary">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "drama">Drama</label>
+
+                            <input type = "text" placeholder = "Is the film emotional?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Drama">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "family">Family</label>
+
+                            <input type = "text" placeholder = "Is the film heartwarming?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Family">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "fantasy">Fantasy</label>
+
+                            <input type = "text" placeholder = "Is the film ethereal?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Fantasy">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "history">History</label>
+
+                            <input type = "text" placeholder = "Is the film nostalgic?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "History">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "horror">Horror</label>
+
+                            <input type = "text" placeholder = "Is the film eerie?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Horror">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "music">Music</label>
+
+                            <input type = "text" placeholder = "Is the film melodic?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Music">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "mystery">Mystery</label>
+
+                            <input type = "text" placeholder = "Is the film enigmatic?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Mystery">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "romance">Romance</label>
+
+                            <input type = "text" placeholder = "Is the film heartfelt?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Romance">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "science-fiction">Science Fiction</label>
+
+                            <input type = "text" placeholder = "Is the film futuristic?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Science Fiction">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "thriller">Thriller</label>
+
+                            <input type = "text" placeholder = "Is the film suspenseful?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Thriller">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "tv-movie">TV Movie</label>
+
+                            <input type = "text" placeholder = "Is the film televised?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "TV Movie">
+                        </div>
+
+                        <div class = "checkbox-field">
+                            <label for = "war">War</label>
+
+                            <input type = "text" placeholder = "Is the film intense?" readonly>
+
+                            <input type = "checkbox" name = "genres" value = "Western">
+                        </div>
+
+                        <div class = "input-field">
+                            <label for = "submit" style = "font-family: 'Montserrat';">Submit</label>
+
+                            <input type = "submit" value = "Data in, insights out.">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src = "https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            function validateForm(){
+                var allTexts = document.querySelectorAll(".input-field input[type='text']");
+
+                for (var iteration = 0; iteration < allTexts.length; iteration++){
+                    var input = allTexts[iteration];
+
+                    if (!input.value || isNaN(input.value)){
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Kindly fill in all text fields with valid numbers in the Inputs corner in order to proceed.",
+                            background: "#FFEBA7",
+                            iconColor: "#462113",
+                            confirmButtonText: "Submit once, scrutinize twice.",
+                            allowOutsideClick: false,
+                            allowEscapeKey: false,
+                            customClass: {
+                                confirmButton: "button-custom", 
+                                title: "title-custom", 
+                            },
+
+                        }).then((result) => {
+                            if (result.isConfirmed){
+                                window.scrollTo(0, 0);
+
+                                setTimeout(function (){
+                                    location.reload(true);
+                                }, 100);
+                            }
+                        });
+
+                        return false;
+                    }
+                }
+
+                var allCheckboxes = document.querySelectorAll(".checkbox-field input[type='checkbox']");
+                
+                var countCheck = 0;
+
+                allCheckboxes.forEach(function (checkbox){
+                    if (checkbox.checked){
+                        countCheck++;
+                    }
+                });
+
+                if (countCheck < 1){
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Kindly tick at least one checkbox field in the Options corner to proceed.",
+                        background: "#FFEBA7",
+                        iconColor: "#462113",
+                        confirmButtonText: "Submit once, scrutinize twice.",
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        customClass: {
+                            confirmButton: "button-custom", 
+                            title: "title-custom", 
+                        },
+
+                    }).then((result) =>{
+                        if (result.isConfirmed){
+                            window.scrollTo(0, 0);
+
+                            setTimeout(function (){
+                                location.reload(true);
+                            }, 100);
+                        }
+                    });
+
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+
+        <style>
+            .swal2-popup .swal2-styled:focus{
+                box-shadow: none !important;
+            }
+
+            div:where(.swal2-container) .swal2-html-container{
+                padding: 20px 3em 0em 3em !important;
+                margin: 0px !important;
+                font-family: "Montserrat" !important;
+                font-weight: normal !important;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+                color: #462113 !important;
+            }
+
+            div:where(.swal2-container) h2:where(.swal2-title){
+                padding: 20px 3em 0em 3em !important;
+            }
+
+            div:where(.swal2-icon){
+                margin: 2.5em auto 0em auto !important;
+            }
+
+            div:where(.swal2-container) div:where(.swal2-popup){
+                padding: 0em 0em 2.5em !important;
+            }
+
+            div:where(.swal2-container) div:where(.swal2-actions){
+                margin: 20px auto 0 !important;
+            }
+
+            .swal2-popup{
+                border-radius: 5px;
+            }
+
+            .button-custom{
+                cursor: pointer;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-family: "Merriweather";
+                font-weight: normal;
+                border: 5px solid #462113 !important;
+                border-radius: 5px !important;
+                background-color: #6E6A6A !important;
+                color: #FFEBA7 !important;
+                outline: none !important;
+            }
+
+            .button-custom:hover{
+                background-color: #4A4344 !important;
+            }
+
+            .title-custom{
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-family: "Playfair Display";
+                font-weight: bold;
+                color: #462113;
+                pointer-events: none;
+            }
+        </style>
+    </body>
+</html>

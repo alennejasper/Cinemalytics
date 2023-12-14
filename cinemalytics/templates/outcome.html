@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'css/core.css' %}">
+
+        <link rel = "icon" type = "image/x-icon" href = "{% static 'icons/icon.png' %}">
+        
+        <link href = "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel = "stylesheet">
+
+        <title>Outcome | Cinemalytics</title>
+    </head>
+
+    <body class = "outcome">
+        <nav>
+            <a href = "{% url 'enter' %}">Cinemalytics</a>
+
+            <a href = "{% url 'describe' %}">Describe</a>
+
+            <a href = "{% url 'predict' %}">Predict</a>
+        </nav>
+
+        <div class = "content">
+            {% if present_values %}
+            <div class = "metrics">
+                <h1>N</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in present_values.items %}
+                    <div class = "input-field">
+                        <label for = "n">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if missing_values %}
+            <div class = "metrics">
+                <h1>Missing</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in missing_values.items %}
+                    <div class = "input-field">
+                        <label for = "missing">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if mean_values %}
+            <div class = "metrics">
+                <h1>Mean</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in mean_values.items %}
+                    <div class = "input-field">
+                        <label for = "mean">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if median_values %}
+            <div class = "metrics">
+                <h1>Median</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in median_values.items %}
+                    <div class = "input-field">
+                        <label for = "median">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if mode_values %}
+            <div class = "metrics">
+                <h1>Mode</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in mode_values.items %}
+                    <div class = "input-field">
+                        <label for = "mode">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if sum_values %}
+            <div class = "metrics">
+                <h1>Sum</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in sum_values.items %}
+                    <div class = "input-field">
+                        <label for = "sum">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if deviation_values %}
+            <div class = "metrics">
+                <h1>Standard Deviation</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in deviation_values.items %}
+                    <div class = "input-field">
+                        <label for = "standard-deviation">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if variance_values %}
+            <div class = "metrics">
+                <h1>Variance</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in variance_values.items %}
+                    <div class = "input-field">
+                        <label for = "variance">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if maximum_values %}
+            <div class = "metrics">
+                <h1>Maximum</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in maximum_values.items %}
+                    <div class = "input-field">
+                        <label for = "maximum">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if minimum_values %}
+            <div class = "metrics">
+                <h1>Minimum</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in minimum_values.items %}
+                    <div class = "input-field">
+                        <label for = "minimum">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if error_values %}
+            <div class = "metrics">
+                <h1>Standard Error of the Mean</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in error_values.items %}
+                    <div class = "input-field">
+                        <label for = "standard-error-of-the-mean">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if skewness_values %}
+            <div class = "metrics">
+                <h1>Skewness</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in skewness_values.items %}
+                    <div class = "input-field">
+                        <label for = "skewness">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if kurtosis_values %}
+            <div class = "metrics">
+                <h1>Kurtosis</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, value in kurtosis_values.items %}
+                    <div class = "input-field">
+                        <label for = "kurtosis">{{field}}</label>
+
+                        <input type = "text" placeholder = "{{value}}" readonly>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if distribution_graph %}
+            <div class = "graphs">
+                <h1>Normal Distribution</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for field, data in distribution_graph.items %}
+                    <div class = "input-field">
+                        <label for = "normal-distribution">{{field}}</label>
+
+                        <div class = "image-field">
+                            <img src = "data:image/png;base64,{{data}}" alt = "Normal Distribution">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if correlation_heatmaps %}
+            <div class = "graphs">
+                <h1>Correlation Matrix</h1>
+
+                <hr>
+
+                <div class = "input-field">
+                    <label for = "correlation-matrix">Pearson’s R</label>
+
+                    <div class = "image-field">
+                        <img src = "data:image/png;base64,{{correlation_heatmaps}}" alt = "Correlation Matrix">
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if line_charts %}
+            <div class = "graphs">
+                <h1>Time Series Plot</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for information in line_charts %}
+                    <div class = "input-field">
+                        <label for = "time-series-plot">{{information.metric}}</label>
+
+                        <div class = "image-field">
+                            <img src = "data:image/png;base64,{{information.image}}" alt = "Time Series Plot">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if predicted_revenue and predicted_status %}
+            <div class = "estimates">
+                <h1>Estimates</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    <div class = "input-field">
+                        <label for = "predicted-revenue">Revenue</label>
+
+                        <input type = "text" placeholder = "{{predicted_revenue}}" readonly>
+                    </div>
+
+                    <div class = "input-field">
+                        <label for = "box-office-status">Box Office Status</label>
+
+                        <input type = "text" placeholder = "{{predicted_status}}" readonly>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if r and root_mean %}
+            <div class = "metrics">
+                <h1>Evaluation</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    <div class = "input-field">
+                        <label for = "r-squared-score">R Squared Score</label>
+
+                        <input type = "text" placeholder = "{{r}}" readonly>
+                    </div>
+
+                    <div class = "input-field">
+                        <label for = "root-mean-squared-error">Root Mean Squared Error</label>
+
+                        <input type = "text" placeholder = "{{root_mean}}" readonly>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if radar_graph %}
+            <div class = "graphs">
+                <h1>Radar Plot</h1>
+
+                <hr>
+
+                <div class = "input-field">
+                    <label for = "radar-plot">Attributes Influence</label>
+
+                    <div class = "image-field">
+                        <img src = "data:image/png;base64,{{radar_graph}}" alt = "Radar Plot">
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if filter_films %}
+            <div class = "estimates">
+                <h1>Four Nearest</h1>
+
+                <hr>
+
+                <div class = "grid">
+                    {% for film in filter_films %}
+                    <div class = "film-field">
+                        <label for = "date">{{film.release_year}}</label>
+
+                        <label for = "four-nearest">{{film.title | truncatechars:25}}</label>
+
+                        <div class = "poster-field">
+                            <img src = "{{film.poster_url}}" alt = "Four Nearest">
+                        </div>
+
+                        <label for = "revenue">${{film.revenue}}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if scatter_graph %}
+            <div class = "graphs">
+                <h1>Scatter Plot</h1>
+
+                <hr>
+
+                <div class = "input-field">
+                    <label for = "scatter-plot">Linear Relationship</label>
+
+                    <div class = "image-field">
+                        <img src = "data:image/png;base64,{{scatter_graph}}" alt = "Scatter Plot">
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if residual_graph %}
+            <div class = "graphs">
+                <h1>Residual Histogram</h1>
+
+                <hr>
+
+                <div class = "input-field">
+                    <label for = "residual-histogram">Differences Distribution</label>
+
+                    <div class = "image-field">
+                        <img src = "data:image/png;base64,{{residual_graph}}" alt = "Residual Histogram">
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>

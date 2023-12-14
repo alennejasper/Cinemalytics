@@ -1,0 +1,779 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
+
+body.portal{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/originals/ca/68/8d/ca688dd62a8b3ff461dda7a842458751.jpg");
+	background-color: #462113;
+	background-size: cover;
+	background-position: top center;   
+    background-repeat: no-repeat;
+	background-attachment: fixed; 
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.portal .content h1{
+    font-size: 4em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    color: #FFF4A7;
+    display: inline-block;
+    margin: 10px 50px 10px 50px;
+    pointer-events: none;
+}
+
+.portal .content p{
+    font-size: 1.45em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat";
+    font-weight: normal;
+    color: #FFEBA7; 
+    display: inline-block;
+    margin: 10px 50px 10px 50px;
+    pointer-events: none;
+}
+
+.portal .content a{
+    padding: 10px 100px 10px 100px;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    text-decoration: none;
+    color: #FFEBA7;
+    background-color: #6E6A6A;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    transition: background-color 0.25s ease;
+    display: inline-block;
+    margin: 20px 50px 20px 50px;
+    cursor: pointer;
+}
+
+.portal .content a:hover{
+    background-color: #4A4344;
+}
+
+body.description{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/originals/ca/68/8d/ca688dd62a8b3ff461dda7a842458751.jpg");
+    background-color: #462113;
+    background-size: cover;
+    background-position: top center;   
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+.description nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #462113;
+    padding: 25px 50px 25px 50px;
+    overflow: hidden;
+}
+
+.description nav a:nth-child(1){
+    font-size: 3.45em;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+}
+
+.description nav a:nth-child(1):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.description nav a:nth-child(2){
+    font-family: "Montserrat";
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 60px;
+}
+
+.description nav a:nth-child(2):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.description nav a:nth-child(3){
+    font-family: "Montserrat";
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+    margin-top: 20px;
+}
+
+.description nav a:nth-child(3):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.description .content .attributes{
+    max-width: 1170px;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.description .content hr{
+    margin: 40px 0px 50px 0px;
+    border: none;
+    height: 5px;
+    background-color: #462113;
+}
+
+.description .content h1{
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    margin: 0px;
+    color: #462113;
+    pointer-events: none;
+}
+
+.description .content .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 45px;
+    grid-column-gap: 90px;
+}
+
+.description .content .input-field{
+    position: relative;
+}
+
+.description .content form .input-field label{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat";
+    font-weight: normal;
+    color: #462113;
+}
+
+.description .content .input-field .icon-field{
+    position: absolute;
+    top: 70%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 2.45em;
+    color: #462113;
+    cursor: pointer;
+}
+
+.description .content .input-field input[type = "text"]{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    background-color: #6E6A6A;
+    color: #FFEBA7;
+    pointer-events: none;
+}
+
+.description .content .input-field input::placeholder{
+    color: #FFEBA7;
+}
+
+.description .content .input-field .dropdown{
+    display: none;
+    position: absolute;
+    background-color: #4A4344;
+    border: 5px solid #462113;
+    width: 530px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    top: 95%;
+}
+
+.description .content .input-field .dropdown label{
+    color: #FFEBA7;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.description .content .input-field .dropdown input[type = "checkbox"]{
+    left: 100%;
+    opacity: 0.75;
+    height: 50px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.description .content .checkbox-field input[type = "checkbox"]:hover{
+    accent-color: #4A4344;
+}
+
+.description .content .input-field .dropdown input[type = "checkbox"]:checked{
+    accent-color: #462113;
+}
+
+.description .content .input-field .dropdown input[type = "checkbox"]:checked:hover{
+    accent-color: #462113;
+}
+
+.description .content .metrics{
+    max-width: 1170px;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.description .content .graphs{
+    max-width: 1170px;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.description .content .input-field input[type = "submit"]{
+    cursor: pointer;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    background-color: #6E6A6A;
+    color: #FFEBA7;
+}
+
+.description .content .input-field input[type = "submit"]:hover{
+    background-color: #4A4344;
+}
+
+.description .content input[type = "date"]{
+    color: #462113;
+    font-size: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.description .content input[type = "date"]:focus{
+    outline: none;
+}
+
+.description .content input[type = "date"]::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    filter: invert(12%) sepia(63%) saturate(896%) hue-rotate(338deg) brightness(96%) contrast(93%);
+}
+
+.description .content input::-webkit-datetime-edit-day-field:focus, .description .content input::-webkit-datetime-edit-month-field:focus, .description .content input::-webkit-datetime-edit-year-field:focus{
+    background-color: #462113;
+    outline: none;
+}
+
+
+body.outcome{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/originals/ca/68/8d/ca688dd62a8b3ff461dda7a842458751.jpg");
+    background-color: #462113;
+    background-size: cover;
+    background-position: top center;   
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+.outcome nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #462113;
+    padding: 25px 50px 25px 50px;
+    overflow: hidden;
+}
+
+.outcome nav a:nth-child(1){
+    font-size: 3.45em;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+}
+
+.outcome nav a:nth-child(1):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.outcome nav a:nth-child(2){
+    font-family: "Montserrat";
+    font-weight: normal;
+    font-size: 2.45em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: 60px;
+}
+
+.outcome nav a:nth-child(2):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.outcome nav a:nth-child(3){
+    font-family: "Montserrat";
+    font-size: 2.45em;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+    margin-top: 15px;
+}
+
+.outcome nav a:nth-child(3):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.outcome .content hr{
+    margin: 40px 0px 50px 0px;
+    border: none;
+    height: 5px;
+    background-color: #462113;
+}
+
+.outcome .content h1{
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    margin: 0px;
+    color: #462113;
+    pointer-events: none;
+}
+
+.outcome .content .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.outcome .content .graphs .grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 45px;
+    grid-column-gap: 90px;
+}
+
+.outcome .content .input-field{
+    position: relative;
+}
+
+.outcome .content .input-field label{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    color: #462113;
+}
+
+.outcome .content .input-field .icon-field{
+    position: absolute;
+    top: 75%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 2.45em;
+    color: #462113;
+    cursor: pointer;
+}
+
+.outcome .content .input-field input[type = "text"]{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    background-color: #6E6A6A;
+    color: #FFEBA7;
+    pointer-events: none;
+}
+
+.outcome .content .input-field input::placeholder{
+    color: #FFEBA7;
+}
+
+.outcome .content .metrics{
+    max-width: 1170px;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.outcome .content .estimates{
+    max-width: 1170px;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.outcome .content .graphs{
+    max-width: 1170px;
+    margin: 50px auto;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.outcome .content .input-field .image-field{
+    max-width: 1170px;
+}
+
+.outcome .content .input-field .image-field img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+}
+
+.outcome .content .film-field .poster-field img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+}
+
+.outcome .content .film-field label{
+    display: block;
+    font-size: 2.45em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat";
+    font-weight: normal;
+    color: #462113;
+    text-align: center;
+}
+
+.outcome .content .film-field label[for = "date"]{
+    display: block;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #462113;
+    text-align: center;
+}
+
+.outcome .content .film-field label[for = "revenue"]{
+    display: block;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    color: #462113;
+    text-align: center;
+}
+
+
+body.prediction{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/originals/ca/68/8d/ca688dd62a8b3ff461dda7a842458751.jpg");
+    background-color: #462113;
+    background-size: cover;
+    background-position: top center;   
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+.prediction nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #462113;
+    padding: 25px 50px 25px 50px;
+    overflow: hidden;
+}
+
+.prediction nav a:nth-child(1){
+    font-size: 3.45em;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+}
+
+.prediction nav a:nth-child(1):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.prediction nav a:nth-child(2){
+    font-family: "Montserrat";
+    font-weight: normal;
+    font-size: 2.45em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: 60px;
+}
+
+.prediction nav a:nth-child(2):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.prediction nav a:nth-child(3){
+    font-family: "Montserrat";
+    font-size: 2.45em;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFEBA7;
+    margin-top: 15px;
+}
+
+.prediction nav a:nth-child(3):hover{
+    text-decoration: line-through;
+    text-decoration-color: #FFEBA7;
+}
+
+.prediction .content form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+}
+
+.prediction .content .attributes{
+    max-width: 1170px;
+    height: fit-content;
+    margin: 50px;
+    padding: 50px;
+    padding-bottom: 75px;
+    background-color: #FFEBA7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.prediction .content .grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 45px;
+    grid-column-gap: 90px;
+}
+
+.prediction .content hr{
+    margin: 40px 0px 50px 0px;
+    border: none;
+    height: 5px;
+    background-color: #462113;
+}
+
+.prediction .content h1{
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Playfair Display";
+    font-weight: bold;
+    margin: 0px;
+    color: #462113;
+    pointer-events: none;
+}
+
+.prediction .content .input-field{
+    position: relative;
+}
+
+.prediction .content label{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat";
+    font-weight: normal;
+    color: #462113;
+}
+
+.prediction .content .icon-field{
+    position: absolute;
+    top: 75%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 2.45em;
+    color: #462113;
+    cursor: pointer;
+}
+
+.prediction .content .input-field input[type = "text"]{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    background-color: #6E6A6A;
+    color: #FFEBA7;
+}
+
+.prediction .content .input-field input::placeholder{
+    color: #FFEBA7;
+}
+
+.prediction .content .checkbox-field{
+    position: relative;
+}
+
+.prediction .content .checkbox-field input[type = "text"]{
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    background-color: #6E6A6A;
+    color: #FFEBA7;
+    pointer-events: none;
+}
+
+.prediction .content .checkbox-field input::placeholder{
+    color: #FFEBA7;
+}
+
+.prediction .content .checkbox-field input[type = "checkbox"]{
+    position: absolute;
+    top: 70%;
+    left: 90%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 25px;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.prediction .content .checkbox-field input[type = "checkbox"]:hover{
+    accent-color: #4A4344;
+}
+
+.prediction .content .checkbox-field input[type = "checkbox"]:checked{
+    accent-color: #462113;
+}
+
+.prediction .content .checkbox-field input[type = "checkbox"]:checked:hover{
+    accent-color: #462113;
+}
+
+.prediction .content .input-field input[type = "submit"]{
+    cursor: pointer;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Merriweather";
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #462113;
+    border-radius: 5px;
+    background-color: #6E6A6A;
+    color: #FFEBA7;
+}
+
+.prediction .content .input-field input[type = "submit"]:hover{
+    background-color: #4A4344;
+}
+
+
+::-webkit-scrollbar{
+    width: 5px !important;
+}
+
+::-webkit-scrollbar-track{
+    background: #6E6A6A !important; 
+}
+
+::-webkit-scrollbar-thumb{
+    background: #FFEBA7 !important;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #462113 !important;
+}
