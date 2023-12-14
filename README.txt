@@ -22,12 +22,12 @@ Implemented Features
    - Constructs a multiple linear regression model to predict box office performance based on extensive box office features.
 
 5. Data Visualization
-   - Utilizes the bell curve, line graph, histogram, radar chart, scatter plot,  and correlation matrix based on box office features to provide comprehensive insights.
+   - Utilizes the bell curve, line graph, histogram, radar chart, scatter plot, and correlation matrix based on box office features to provide comprehensive insights.
 
 Table of Contents
 1. Data and Database
 2. Big Data–driven Box Office Prediction
-3. Visualization
+3. Data Visualization
 4. Deployment Instructions
 
 Data and Database
@@ -36,7 +36,7 @@ The box office analytics project, Cinemalytics, sources the box office informati
 Big Data-Driven Box Office Prediction
 Within the box office analytics project, Cinemalytics, a multiple linear regression model, was integrated into the developed web application that draws upon an extensive array of box office features with an R–squared value of at least 0.60. Accordingly, the web application embraces user-centric design to let box office enthusiasts and industry professionals contribute to such predictive prowess. Users can seamlessly input data across various attributes – budget, vote count, vote average, popularity, and genres – which fosters an interactive and intuitive experience that transcends the conventional boundaries of revenue prediction in the cinematic realm.
 
-Visualization
+Data Visualization
 The analytics journey of this box office analytics project, Cinemalytics, extends beyond mere prediction; as such employs a diverse arsenal of visualization techniques. From the nuanced depiction of value versus residual distributions through a bell curve and histogram to the dynamic portrayal of value trends via line graph and scatter plot, the platform transforms raw data into visual narratives. Accordingly, the insights are further enriched by the integration of a radar chart and correlation matrix, which offers a holistic perspective on the intricate relationships within box office features.
 
 Deployment Instructions
