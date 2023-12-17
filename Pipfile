@@ -5,14 +5,12 @@ name = "pypi"
 
 [packages]
 django = "*"
-beautifulsoup4 = "*"
-ipykernel = "*"
-pandas = "*"
 scikit-learn = "*"
-scipy = "*"
 seaborn = "*"
+numpy = "*"
+matplotlib = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.12"
